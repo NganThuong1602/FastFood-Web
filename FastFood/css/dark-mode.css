@@ -1,0 +1,96 @@
+:root {
+    --accent: #ffbe33;     
+    --transition: all 0.3s ease;
+    
+    /* màu lightmode */
+    --bg-light: #ffffff;
+    --text-light: #333333;
+    --border-light: #dee2e6;
+    
+    /* màu darkmode */
+    --bg-dark-body: #1a1a1a;
+    --bg-dark-card: #222831;
+    --bg-dark-deep: #111111;
+    --text-dark: #f1f1f1;
+    --border-dark: #3d4654;
+}
+
+/*3. Bảng lightmode*/
+/* Đảm bảo chữ trong bảng và kẻ dọc hiện rõ */
+.table td, .table th {
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-light) !important;
+}
+
+.table thead th {
+    background-color: #f8f9fa !important; /* Nền xám nhạt */
+    color: #111111 !important;           /* Chữ đen rõ rệt */
+    border-bottom: 2px solid #dee2e6 !important;
+}
+
+/*4. Darkmode (Kích hoạt khi có .dark-mode)*/
+body.dark-mode {
+    background-color: var(--bg-dark-body) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Navbar & Footer trùng màu */
+body.dark-mode .header_section, 
+body.dark-mode footer, 
+body.dark-mode .footer_section {
+    background-color: var(--bg-dark-deep) !important;
+    color: #ffffff !important;
+}
+
+/* Khung bảng darkmode */
+body.dark-mode .admin-table-wrapper {
+    background-color: var(--bg-dark-card) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Kẻ dọc và màu chữ bảng darkmode*/
+body.dark-mode .table td, 
+body.dark-mode .table th,
+body.dark-mode .table tbody td * {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Đầu bảng darkmode */
+body.dark-mode .table thead th {
+    background-color: #2a2e35 !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid var(--accent) !important;
+}
+
+body {
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+.header_section, .admin-table-wrapper, .table td {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+/*5. Footer*/
+.footer_social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    transition: var(--transition);
+    background-color: var(--accent) !important;
+    color: #000000 !important;
+}
+
+.footer_social a:hover {
+    transform: translateY(-3px);
+}
+
+/*6. Modal darkmode*/
+body.dark-mode .modal-body,
+body.dark-mode #login-form-wrap h3,
+body.dark-mode #register-form-wrap h3 {
+    color: #000000 ; 
+    opacity: 1 !important;
+}
